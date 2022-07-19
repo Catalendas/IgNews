@@ -5,13 +5,14 @@ import { stripe } from "../../../components/services/stripe";
 export async function saveSubscription(
     subscriptionId: string,
     customerId: string,
+    createAction = false
 ) {
-    const userRef =  await fauna.query(
+    const userRef = await fauna.query(
        q.Select(
             "ref",
             q.Get(
                 q.Match(
-                    q.Index('user_by_stripe_customer_id'), 
+                    q.Index('user_by_stripe_custumer_id'), 
                     customerId
                 )
             )
@@ -28,10 +29,31 @@ export async function saveSubscription(
 
     }
 
+    console.log(subscriptionData)
+
+  if(createAction) {
     await fauna.query(
         q.Create(
             q.Collection('subscriptions'),
             { data: subscriptionData }
         )
+    ).catch(err => {
+        console.log(err)
+    })
+  } else {
+    await fauna.query(
+        q.Replace(
+            q.Select(
+                "ref",
+                q.Get(
+                    q.Match(
+                        q.Index('subscriptions_by_id'),
+                        subscriptionId,
+                    )
+                )
+            ),
+            { data: subscriptionData}
+        )
     )
+  }
 }

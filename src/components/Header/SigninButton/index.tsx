@@ -11,7 +11,7 @@ export function SigninButton() {
     // Hook useSessin for next
     const {data: session} = useSession()
     
-    console.log(session)
+    // console.log(session)
     return session ? (
         <button 
             type="button"
