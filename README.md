@@ -37,6 +37,7 @@ Frameworks :
 
 - React Js
 - Sass
+- Next js
 
 API :
 
