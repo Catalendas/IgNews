@@ -30,7 +30,7 @@
             margin-top: 1rem;
             line-height: 2rem;
 
-            transition: 0.2s;
+            transition: 0.5s;
         }
 
         p {
@@ -42,5 +42,6 @@
         &:hover strong {
             color: var(--yellow-500);
         }
+
     }
 }

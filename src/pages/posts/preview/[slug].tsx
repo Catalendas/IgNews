@@ -53,7 +53,9 @@ export default function PostPreview({ posts }: PostPreviewProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return{
-        paths: [],
+        paths: [ 
+           {params: { slug: 'codigo-limpo-reflexao-e-pratica'}}
+        ],
         fallback: 'blocking'
     }
 }

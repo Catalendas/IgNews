@@ -1,6 +1,5 @@
- import { useSession, signIn } from 'next-auth/react'
-import { redirect } from 'next/dist/server/api-utils'
-import { useRouter } from 'next/router'
+import { useSession, signIn } from 'next-auth/react'
+import {useRouter} from 'next/router'
 import { api } from '../services/api'
 import { getStripeJs } from '../services/stripe-js'
 import style from './style.module.scss'

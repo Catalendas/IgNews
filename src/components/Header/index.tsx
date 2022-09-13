@@ -1,5 +1,4 @@
 import { SigninButton } from './SigninButton'
-import Link from 'next/link'
 import styles from './styles.module.scss'
 import { ActiveLink } from '../ActiveLinks'
 
