@@ -1,7 +1,7 @@
 import {fireEvent, render, screen} from "@testing-library/react"
 import { signIn, useSession } from 'next-auth/react'
 import {useRouter} from 'next/router'
-import { SubscribleButton } from "."
+import { SubscribleButton } from "../../components/SubscribleButton"
 
 jest.mock('next-auth/react')
 jest.mock('next/router', () => ({
