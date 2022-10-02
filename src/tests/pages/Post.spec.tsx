@@ -25,7 +25,7 @@ describe('Post page', () => {
         const getPrismicClientMocked = jest.mocked(getPrismicClient)
 
         getPrismicClientMocked.mockReturnValueOnce({
-            query: jest.fn().mockResolvedValueOnce({
+            getByType: jest.fn().mockResolvedValueOnce({
                 results: [
                     {
                         uid: 'my-new-post',
@@ -34,7 +34,7 @@ describe('Post page', () => {
                                 {type: 'heading', text: 'My new post'}
                             ], 
                             conent: [
-                                { type: 'paragraph', text: 'Post excerpt'}
+                                { type: 'paragraph', text: '<p>Post excerpt</p>'}
                             ],
                         },
                         last_publication_date: '04-01-2022',

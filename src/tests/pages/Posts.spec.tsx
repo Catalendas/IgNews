@@ -20,7 +20,7 @@ describe('Post page', () => {
         render(<Post posts={posts} />)
 
         expect(screen.getByText('My new Post')).toBeInTheDocument()
-        expect(screen.getByText('Post content')).toBeInTheDocument()
+        expect(screen.getByText('Wanna continue reading ?')).toBeInTheDocument()
     })
 
     it('redirect user if no subscription is found', async () => {
