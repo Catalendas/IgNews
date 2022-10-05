@@ -47,7 +47,7 @@ describe('Post page', () => {
         const getPrismicClientMocked = jest.mocked(getPrismicClient)
 
         getPrismicClientMocked.mockReturnValueOnce({
-            getByUID: jest.fn().mockResolvedValueOnce({
+            query: jest.fn().mockResolvedValueOnce({
                 data: {
                     title: [
                         {type: 'heading', text: 'My new post'}
