@@ -55,6 +55,7 @@ const webhooks = async (request: NextApiRequest, response: NextApiResponse) => {
           case "customer.subscription.deleted":
             const subscription = event.data.object as Stripe.Subscription;
 
+
             await saveSubscription(
               subscription.id,
               subscription.customer.toString()
@@ -65,12 +66,13 @@ const webhooks = async (request: NextApiRequest, response: NextApiResponse) => {
           case "checkout.session.completed":
             const checkoutSession = event.data
               .object as Stripe.Checkout.Session;
-
+           
             await saveSubscription(
               String(checkoutSession.subscription),
               String(checkoutSession.customer),
               true
             );
+
             break;
 
           default:
