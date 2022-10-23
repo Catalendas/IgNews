@@ -58,7 +58,8 @@ const webhooks = async (request: NextApiRequest, response: NextApiResponse) => {
 
             await saveSubscription(
               subscription.id,
-              subscription.customer.toString()
+              subscription.customer.toString(),
+              false
             );
 
             break;
